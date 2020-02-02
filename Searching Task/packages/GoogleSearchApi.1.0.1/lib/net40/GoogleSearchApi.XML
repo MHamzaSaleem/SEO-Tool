@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GoogleSearchApi</name>
+    </assembly>
+    <members>
+        <member name="T:GoogleSearchApi.GoogleSearchClient">
+            <summary>
+            Google search engine.
+            </summary>
+        </member>
+        <member name="M:GoogleSearchApi.GoogleSearchClient.Search(System.String,System.Int32,System.Boolean)">
+            <summary>
+            The API provides 100 search queries per day for free. If you need more, you may sign up for billing in the console.
+            </summary>
+            <param name="SearchString">String to search</param>
+            <param name="StartIndex">This is the value from GoogleSearchApi.Queries.NextPage/PreviousPage[0].startIndex used for paging. Default is 1</param>
+            <param name="CxKey">The search engine to use in your request (using either the cx or cref query parameters). By default it uses cxKey.</param>
+            <returns>Returns a GoogleSearch class which you can pass into the view.</returns>
+        </member>
+        <member name="T:GoogleSearchApi.GoogleSearchModel">
+            <summary>
+            //This is a Model that will hold search results.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.kind">
+            <summary>
+            Unique identifier for the type of current object. For this API, it is customsearch#search.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.url">
+            <summary>
+            The OpenSearch URL element that defines the template for this API.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.queries">
+            <summary>
+            Contains one or more sets of query metadata, keyed by role name. The possible role names are defined by the OpenSearch query roles and by two custom roles: "nextPage" and "previousPage".
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.context">
+            <summary>
+            Metadata about the particular search engine that was used for performing the search query.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.items">
+            <summary>
+            The current set of custom search results.
+            </summary>
+        </member>
+        <member name="T:GoogleSearchApi.GoogleSearchModel.Url">
+            <summary>
+            The OpenSearch URL element that defines the template for this API.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Url.type">
+            <summary>
+            The MIME type of the OpenSearch Url template for the Custom Search API.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Url.template">
+            <summary>
+            The actual OpenSearch template for this API.
+            </summary>
+        </member>
+        <member name="T:GoogleSearchApi.GoogleSearchModel.QuerieSet">
+            <summary>
+            Contains one or more sets of query metadata, keyed by role name. The possible role names are defined by the OpenSearch query roles and by two custom roles: "nextPage" and "previousPage".
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.title">
+            <summary>
+            A description of the query.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.totalResults">
+            <summary>
+            Number of total search results.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.searchTerms">
+            <summary>
+            The search terms entered by the user.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.count">
+            <summary>
+            Number of search results returned in this set.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.startIndex">
+            <summary>
+            The index of the current set of search results into the total set of results, where the index of the first result is 1.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.startPage">
+            <summary>
+            The page number of this set of results, where the page length is set by the count property.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.language">
+            <summary>
+            The language of the search results.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.inputEncoding">
+            <summary>
+            The character encoding supported for search requests.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.outputEncoding">
+            <summary>
+            The character encoding of the search results.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.safe">
+            <summary>
+            The safe search level used for filtering results.
+            This is a custom property not defined in the OpenSearch spec.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.cx">
+            <summary>
+            The identifier of a custom search engine created by visiting http://www.google.com/cse, if specified in request. This is a custom property not defined in the OpenSearch spec.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.QuerieSet.cref">
+            <summary>
+            A URL pointing to the definition of a linked custom search engine, if specified in request. This is a custom property not defined in the OpenSearch spec.
+            </summary>
+        </member>
+        <member name="T:GoogleSearchApi.GoogleSearchModel.Queries">
+            <summary>
+            Contains one or more sets of query metadata, keyed by role name.
+            The possible role names are defined by the OpenSearch query roles
+            and by two custom roles: "nextPage" and "previousPage".
+            </summary>
+        </member>
+        <member name="T:GoogleSearchApi.GoogleSearchModel.Context">
+            <summary>
+            Metadata about the particular search engine that was used for performing the search query.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Context.title">
+            <summary>
+            The name of the search engine that was used for the query.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.kind">
+            <summary>
+            A unique identifier for the type of current object. For this API, it is customsearch#result.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.title">
+            <summary>
+            The title of the search result, in plain text.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.htmlTitle">
+            <summary>
+            The title of the search result, in HTML.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.link">
+            <summary>
+            The full URL to which the search result is pointing, e.g. http://www.example.com/foo/bar.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.displayLink">
+            <summary>
+            An abridged version of this search result’s URL, e.g. www.example.com.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.snippet">
+            <summary>
+            The snippet of the search result, in plain text.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.htmlSnippet">
+            <summary>
+            The snippet of the search result, in HTML.
+            </summary>
+        </member>
+        <member name="P:GoogleSearchApi.GoogleSearchModel.Item.pagemap">
+            <summary>
+            Contains pagemap information for this search result.
+            </summary>
+        </member>
+    </members>
+</doc>

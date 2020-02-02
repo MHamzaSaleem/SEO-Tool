@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.SearchConsole.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.SearchConsole.v1.SearchConsoleService">
+            <summary>The SearchConsole Service.</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.SearchConsoleService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.SearchConsoleService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.SearchConsoleService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.SearchConsoleService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleService.BatchUri">
+            <summary>Gets the batch base URI; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleService.BatchPath">
+            <summary>Gets the batch base path; <c>null</c> if unspecified.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleService.UrlTestingTools">
+            <summary>Gets the UrlTestingTools resource.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1">
+            <summary>A base abstract class for SearchConsole requests.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new SearchConsoleBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.Alt">
+            <summary>Data format for response.</summary>
+            [default: json]
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and reports.
+            Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.SearchConsoleBaseServiceRequest`1.InitParameters">
+            <summary>Initializes SearchConsole parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.UrlTestingToolsResource">
+            <summary>The "urlTestingTools" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTest">
+            <summary>Gets the MobileFriendlyTest resource.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource">
+            <summary>The "mobileFriendlyTest" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.Run(Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestRequest)">
+            <summary>Runs Mobile-Friendly Test for a given URL.</summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest">
+            <summary>Runs Mobile-Friendly Test for a given URL.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestRequest)">
+            <summary>Constructs a new Run request.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.SearchConsole.v1.UrlTestingToolsResource.MobileFriendlyTestResource.RunRequest.InitParameters">
+            <summary>Initializes Run parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.Data.BlockedResource">
+            <summary>Blocked resource.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.BlockedResource.Url">
+            <summary>URL of the blocked resource.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.BlockedResource.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.Data.Image">
+            <summary>Describe image data.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.Image.Data">
+            <summary>Image data in format determined by the mime type. Currently, the format will always be "image/png",
+            but this might change in the future.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.Image.MimeType">
+            <summary>The mime-type of the image data.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.Image.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.Data.MobileFriendlyIssue">
+            <summary>Mobile-friendly issue.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.MobileFriendlyIssue.Rule">
+            <summary>Rule violated.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.MobileFriendlyIssue.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.Data.ResourceIssue">
+            <summary>Information about a resource with issue.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.ResourceIssue.BlockedResource">
+            <summary>Describes a blocked resource issue.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.ResourceIssue.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestRequest">
+            <summary>Mobile-friendly test request.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestRequest.RequestScreenshot">
+            <summary>Whether or not screenshot is requested. Default is false.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestRequest.Url">
+            <summary>URL for inspection.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestResponse">
+            <summary>Mobile-friendly test response, including mobile-friendly issues and resource issues.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestResponse.MobileFriendliness">
+            <summary>Test verdict, whether the page is mobile friendly or not.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestResponse.MobileFriendlyIssues">
+            <summary>List of mobile-usability issues.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestResponse.ResourceIssues">
+            <summary>Information about embedded resources issues.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestResponse.Screenshot">
+            <summary>Screenshot of the requested URL.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestResponse.TestStatus">
+            <summary>Final state of the test, can be either complete or an error.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.RunMobileFriendlyTestResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.SearchConsole.v1.Data.TestStatus">
+            <summary>Final state of the test, including error details if necessary.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.TestStatus.Details">
+            <summary>Error details if applicable.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.TestStatus.Status">
+            <summary>Status of the test.</summary>
+        </member>
+        <member name="P:Google.Apis.SearchConsole.v1.Data.TestStatus.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+    </members>
+</doc>
