@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Searching Vis Google", "Searching Vis Google\Searching Vis Google.csproj", "{29539EB4-A69D-4380-9B03-29112501EDB9}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{02C96FEE-9169-4C5D-B87F-29454CB2EECA}"
-EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "_Setup", "_Setup\_Setup.vdproj", "{0D7F4383-9AC4-4D02-91E9-206E0B9021FF}"
 EndProject
 Global
@@ -19,8 +17,6 @@ Global
 		{29539EB4-A69D-4380-9B03-29112501EDB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29539EB4-A69D-4380-9B03-29112501EDB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29539EB4-A69D-4380-9B03-29112501EDB9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02C96FEE-9169-4C5D-B87F-29454CB2EECA}.Debug|Any CPU.ActiveCfg = Debug
-		{02C96FEE-9169-4C5D-B87F-29454CB2EECA}.Release|Any CPU.ActiveCfg = Release
 		{0D7F4383-9AC4-4D02-91E9-206E0B9021FF}.Debug|Any CPU.ActiveCfg = Debug
 		{0D7F4383-9AC4-4D02-91E9-206E0B9021FF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection

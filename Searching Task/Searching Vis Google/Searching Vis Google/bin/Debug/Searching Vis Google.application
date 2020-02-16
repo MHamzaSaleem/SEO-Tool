@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Searching Vis Google.exe.manifest" size="13559">
+    <dependentAssembly dependencyType="install" codebase="Searching Vis Google.exe.manifest" size="12238">
       <assemblyIdentity name="Searching Vis Google.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZkhO17/h7KUEc1Wr9RDUzjUk3ANd2yidXnR1AH2hMXk=</dsig:DigestValue>
+        <dsig:DigestValue>TuM60llrwfod4/w0ArPsF7iHumSXupBavW/uFXWnaI8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

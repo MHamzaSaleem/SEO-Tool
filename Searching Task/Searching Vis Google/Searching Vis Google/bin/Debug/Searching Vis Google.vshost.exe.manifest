@@ -115,18 +115,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GoogleApi.dll" size="355840">
-      <assemblyIdentity name="GoogleApi" version="3.9.6.0" publicKeyToken="781851E053B06E74" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6hJ7pX1NRI50OhG6Q+KR5rZa4yGpn6EKqigIRKafQ1A=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GoogleSearchApi.dll" size="14848">
       <assemblyIdentity name="GoogleSearchApi" version="1.1.0.0" publicKeyToken="23ABB0C50780DB17" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -163,14 +151,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Searching Vis Google.exe" size="1286152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Searching Vis Google.exe" size="1289736">
       <assemblyIdentity name="Searching Vis Google" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KPj/HeHl7jJxATq+F1eni7HutNzjlgGuklHHZAzFsBg=</dsig:DigestValue>
+        <dsig:DigestValue>nsWevMc1RIA48QDCXzVVmEJyw6Aa9Qc9Km92SGRXajM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -195,18 +183,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>QuhbttC2E86v5AnX7Cj2pV9EC/bkPmg/ONLuG58bX+g=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Toolbox.Logger.dll" size="11776">
-      <assemblyIdentity name="Toolbox.Logger" version="0.2.2.20176" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gS84Z9Yw4BKlDoGVZTIJFDj8Ftd1E59hZ+XQV0/rMPI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

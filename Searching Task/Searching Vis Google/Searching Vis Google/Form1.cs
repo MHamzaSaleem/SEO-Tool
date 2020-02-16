@@ -27,41 +27,65 @@ namespace Searching_Vis_Google
     {
         public Form1()
         {
-            //Thread thread = new Thread(new ThreadStart(StartForm));
-            //thread.Start();
-            //Thread.Sleep(5000);
+            Thread thread = new Thread(new ThreadStart(StartForm));
+            thread.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
-            //thread.Abort();
+            thread.Abort();
         }
 
-        //public void StartForm()
-        //{
-        //    try
-        //    {
-        //        System.Windows.Forms.Application.Run(new AppStart());
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        //MessageBox.Show("Welcome To Searching Engine");
-        //    }
-        //}
-
+        public void StartForm()
+        {
+            try
+            {
+                System.Windows.Forms.Application.Run(new AppStart());
+            }
+            catch(Exception ex)
+            {
+                //MessageBox.Show("Welcome To Searching Engine");
+            }
+        }
+        string[] res = new string[2];
         public static int len = 0;
+        public static int currentLine=0;
         string[] searchlines = new string[0];
         string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Data.xlsx";
         object selectedValue = "";
-        List<string> searchingQueries = new List<string>();
+        public static int linenumber = 0;
+        List<Excel> gridViewList = new List<Excel>();
+        public static string[,] finalResult = new string[0, 3];
+        public static int arrayLen = 0;
         
-        private void Form1_Load(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
-            progressBar1.Visible = label3.Visible = false;
-            comboBox1.SelectedItem = null;
-            comboBox1.SelectedText = "--Select Country--";
+            RefreshGrid();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void RefreshGrid()
         {
+            if (finalResult.Length != gridViewList.Count)
+            {
+                var source = new BindingSource();
+                source.DataSource = gridViewList;
+                dataGridView1.DataSource = source;
+            }
+            else
+                timer2.Stop();
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            progressBar1.Visible = label3.Visible = false;  
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            gridViewList.Clear();
+            RefreshTimer();
             if (File.Exists(path))
             {
                 label1.Text = "";
@@ -83,8 +107,7 @@ namespace Searching_Vis_Google
                     progressBar1.Visible = label3.Visible = true;
                     progressBar1.Style = ProgressBarStyle.Marquee;
                     button1.Enabled = richTextBox1.Enabled = comboBox1.Enabled = false;
-                    await Task.Run(() => Search());
-                    FinalStep();
+                    toCheck();
                 }
                 else if (comboBox1.SelectedIndex == -1)
                 {
@@ -94,7 +117,7 @@ namespace Searching_Vis_Google
                 else
                 {
                     MessageBox.Show("Search Box is Empty!");
-                    label1.Text = "No Result found!";
+                     label1.Text = "No Result found!";
                 }
             }
             else
@@ -103,8 +126,27 @@ namespace Searching_Vis_Google
             }
         }
 
+        private void RefreshTimer()
+        {
+            timer2.Interval = (3 * 1000); // 3 secs
+            timer2.Tick += new System.EventHandler(timer2_Tick);
+            timer2.Start();
+        }
+
+        private async void toCheck()
+        {
+            await Task.Run(() => Search());
+            if (currentLine == linenumber)
+                FinalStep();
+            else
+                toCheck();
+        }
+
         private void FinalStep()
         {
+            searchlines = new string[0];
+            Array.Resize(ref  searchlines, searchlines.Length + len);
+            currentLine = linenumber = 0;
             progressBar1.Visible = label3.Visible = false;       
             button1.Enabled = richTextBox1.Enabled = comboBox1.Enabled = true;
             richTextBox1.Text = "";
@@ -123,7 +165,8 @@ namespace Searching_Vis_Google
         {
             try
             {
-                string[,] finalResult = new string[len, 3];
+                if (currentLine == 0)
+                    finalResult = new string[len, 3];
                 string searchFilter = "allintitle:";
                 string url = "";
                 string ipport = "";
@@ -162,37 +205,53 @@ namespace Searching_Vis_Google
                 var proxy = new Proxy();
                 proxy.HttpProxy = ipport;
                 chromeOptions.Proxy = proxy;
-                int linenumber = 0;
                 chromeOptions.AddArguments("headless");
                 using (var driver = new ChromeDriver(ser, chromeOptions))
                 {
                     try
                     {
-                        for (int i = 0; i < len; i++)
+                        for (int i = currentLine; i < len; i++)
                         {
-                            linenumber++;
+                            currentLine++;
                             driver.Navigate().GoToUrl(url + searchlines[i]);
 
-                            var getElement = driver.FindElementById("resultStats");
+                            var getElement = driver.FindElementById("mBMHK");
                             string getText = getElement.GetAttribute("innerHTML");
-
-                            string[] res = getText.Split(' ');
+                            //thisarray
+                            res = getText.Split(' ');
                             if (searchLoc == "Canada")
                             {
                                 res[0] = "About ";
                                 res[1] = Regex.Replace(res[1], "[^0-9]+", string.Empty);
                             }
+                            
                             finalResult[i, 0] = searchlines[i];
                             finalResult[i, 1] = res[0];
                             finalResult[i, 2] = res[1];
+                            linenumber = finalResult.GetLength(0);
+                            gridViewList.Add(new Excel { Phrase = finalResult[i, 0], Results = finalResult[i, 1] + " " + finalResult[i, 2] });
                         }
-
-                        saveToExcel(finalResult);
+                        driver.Close();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message+"There is no results available as you write on line number " + linenumber + ", if line number " + linenumber + " is empty then remove this line to prevent Error!");
+                        int line = currentLine - 1;
+                        if (searchlines[line].Equals(""))
+                        {
+                            finalResult[line, 0] = searchlines[line] + "Empty line";
+                            finalResult[line, 1] = "Empty Line";
+                            finalResult[line, 2] = "";
+                        }
+                        else
+                        {
+                            finalResult[line, 0] = searchlines[line];
+                            finalResult[line, 1] = "Result Not Found";
+                            finalResult[line, 2] = "";
+                        }
+                        gridViewList.Add(new Excel { Phrase = finalResult[line,0], Results = finalResult[line, 1] + " " + finalResult[line, 2] });
                     }
+                    if (currentLine == linenumber)
+                        saveToExcel(finalResult);
                 }
             }
             catch (Exception ex)
@@ -320,44 +379,13 @@ namespace Searching_Vis_Google
             }
         }
 
-        //private void writeInFile(string[,] data)
-        //{
-        //    try
-        //    {
-        //        for(int i =0; i<data.GetLength(0);i++)
-        //        {
-        //            if (!File.Exists(path))
-        //            {
-        //                using (StreamWriter sw = File.CreateText(path))
-        //                {
-        //                    sw.WriteLine("Phrase" + "                " + "Results");
-        //                    sw.WriteLine(data[i,0]+"    "+data[i,1]+" "+data[i,2]);
-        //                }
-        //            }
-        //            else
-        //            {
-        //                using (StreamWriter sw = File.AppendText(path))
-        //                {
-        //                    sw.WriteLine(data[i,0] + "    " + data[i,1] + " " + data[i,2]);
-        //                }	
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedValue = comboBox1.SelectedItem;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
+       {
 
         }
 
@@ -386,5 +414,12 @@ namespace Searching_Vis_Google
 
         }
 
+
+       
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

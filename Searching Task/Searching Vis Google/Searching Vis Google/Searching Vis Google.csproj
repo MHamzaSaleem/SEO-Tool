@@ -92,10 +92,6 @@
       <HintPath>..\packages\Google.Apis.SearchConsole.v1.1.43.0.1853\lib\net45\Google.Apis.SearchConsole.v1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GoogleApi, Version=3.9.6.0, Culture=neutral, PublicKeyToken=781851e053b06e74, processorArchitecture=MSIL">
-      <HintPath>..\packages\GoogleApi.3.9.6\lib\net45\GoogleApi.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="GoogleSearchApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23abb0c50780db17, processorArchitecture=MSIL">
       <HintPath>..\packages\GoogleSearchApi.1.0.1\lib\net40\GoogleSearchApi.dll</HintPath>
       <Private>True</Private>
@@ -128,10 +124,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="Toolbox.Extensions, Version=0.2.2.20176, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Toolbox.0.2.2\lib\net40\Toolbox.Extensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Toolbox.Logger, Version=0.2.2.20176, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Toolbox.0.2.2\lib\net40\Toolbox.Logger.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
